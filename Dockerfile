@@ -10,9 +10,9 @@ ENV POSTGRES_PASSWD postgres
 
 # Build PostgreSQL 9.1.2
 RUN apt-get update
-RUN apt-get install -y build-essential gcc-4.7 python python-dev libreadline6-dev zlib1g-dev libssl-dev libxml2-dev libxslt-dev
+RUN apt-get install -y build-essential gcc-4.7 python python-dev libreadline6-dev zlib1g-dev libssl-dev libxml2-dev libxslt-dev libc6-dev
 
-RUN ["mkdir", "-p -m 777", "/usr/local/src/"]
+RUN ["mkdir", "-p", "/usr/local/src/"]
 ADD packages/postgresql-9.1.2.tar.bz2 /usr/local/src/
 WORKDIR /usr/local/src/postgresql-9.1.2/
 RUN ./configure --prefix=/usr/local --with-pgport=5432 --with-python --with-openssl --with-libxml --with-libxslt --with-zlib CC='gcc-4.7 -m64'
