@@ -1,5 +1,5 @@
 # Version: 0.0.1
-FROM ubuntu:latest
+FROM ubuntu:18.04
 
 MAINTAINER Juan Pedro Perez "jp.alcantara@geographica.gs"
 
