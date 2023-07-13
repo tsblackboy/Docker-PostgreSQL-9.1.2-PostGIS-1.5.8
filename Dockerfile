@@ -15,7 +15,7 @@ RUN apt-get install -y build-essential gcc-4.7 python python-dev libreadline6-de
 RUN ["mkdir", "-p", "/usr/local/src/"]
 ADD packages/postgresql-9.1.2.tar.bz2 /usr/local/src/
 WORKDIR /usr/local/src/postgresql-9.1.2/
-RUN ./configure --prefix=/usr/local --with-pgport=5432 --with-python --with-openssl --with-libxml --with-libxslt --with-zlib CC='gcc-4.7 -m64'
+RUN ./configure --prefix=/usr/local --with-pgport=5432 --with-python --with-openssl --with-libxml --with-libxslt --with-zlib CC='gcc -m64'
 RUN ["make"]
 RUN ["make", "install"]
 WORKDIR /usr/local/src/postgresql-9.1.2/contrib
@@ -41,7 +41,7 @@ ADD packages/proj4-patch/nad/epsg /usr/local/src/proj-4.8.0/nad/
 ADD packages/proj4-patch/nad/PENR2009.gsb /usr/local/src/proj-4.8.0/nad/
 WORKDIR /usr/local/src/proj-4.8.0/
 RUN ["/bin/sh", "-c", "chown -R 142957:5000 /usr/local/src/proj-4.8.0/"]
-RUN ./configure CC='gcc-4.7 -m64'
+RUN ./configure CC='gcc -m64'
 RUN ["make"]
 RUN ["make", "install"]
 RUN ["ldconfig"]
@@ -50,7 +50,7 @@ RUN ["ldconfig"]
 ADD packages/postgis-1.5.8.tar.gz /usr/local/src/
 ADD packages/postgis-1.5.8-patch/spatial_ref_sys.sql /usr/local/src/postgis-1.5.8/
 WORKDIR /usr/local/src/postgis-1.5.8
-RUN ./configure CC='gcc-4.7 -m64'
+RUN ./configure CC='gcc -m64'
 RUN make
 RUN make install
 
