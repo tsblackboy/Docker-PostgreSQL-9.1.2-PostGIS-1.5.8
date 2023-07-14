@@ -1,11 +1,11 @@
 # Version: 0.0.1
 FROM ubuntu:18.04
 
-MAINTAINER Juan Pedro Perez "jp.alcantara@geographica.gs"
+MAINTAINER Tiago de Souza Barbosa "barbosatsb2@fab.mil.br"
 
 # This is a clever instruction, for, if changed, will force the build command to
 # skip cache and recreate the whole image from scratch
-ENV REFRESHED_AT 2014-12-03_11:43
+ENV REFRESHED_AT 2023-0-14_11:43
 ENV POSTGRES_PASSWD postgres
 
 # Build PostgreSQL 9.1.2
