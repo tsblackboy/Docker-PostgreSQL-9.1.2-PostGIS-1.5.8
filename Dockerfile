@@ -15,7 +15,7 @@ RUN apt-get install -y build-essential gcc-4.7 python python-dev libreadline6-de
 RUN ["mkdir", "-p", "/usr/local/src/"]
 ADD packages/postgresql-9.1.2.tar.bz2 /usr/local/src/
 WORKDIR /usr/local/src/postgresql-9.1.2/
-RUN ./configure --prefix=/usr/local --with-pgport=5432 --with-python --with-openssl --with-libxml --with-libxslt --with-zlib CC='gcc -m64'
+RUN ./configure --prefix=/usr/local --with-pgport=5432 --with-python --with-libxml --with-libxslt --with-zlib CC='gcc -m64'
 RUN ["make"]
 RUN ["make", "install"]
 WORKDIR /usr/local/src/postgresql-9.1.2/contrib
