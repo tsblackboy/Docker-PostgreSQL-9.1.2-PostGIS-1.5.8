@@ -5,6 +5,7 @@ MAINTAINER Tiago de Souza Barbosa "barbosatsb2@fab.mil.br"
 
 # This is a clever instruction, for, if changed, will force the build command to
 # skip cache and recreate the whole image from scratch
+ENV CXX "g++ -std=c++98"
 ENV REFRESHED_AT 2023-0-14_11:43
 ENV POSTGRES_PASSWD postgres
 
